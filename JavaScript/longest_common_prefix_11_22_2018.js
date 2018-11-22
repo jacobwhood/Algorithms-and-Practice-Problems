@@ -41,6 +41,5 @@ var longestCommonPrefix = function (strs) {
   }
 };
 
-// check current char in each str in strs, if not equal break and return str[0, length]
-console.log(longestCommonPrefix(['flower', 'flow', 'flight']));
-console.log(longestCommonPrefix(['dog', 'racecar', 'car']));
+console.log(longestCommonPrefix(['flower', 'flow', 'flight']));     // "fl"
+console.log(longestCommonPrefix(['dog', 'racecar', 'car']));        // ""
