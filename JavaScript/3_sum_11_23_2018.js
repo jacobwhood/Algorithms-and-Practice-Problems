@@ -13,7 +13,7 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-const threeSum = function (nums) {
+var threeSum = function (nums) {
   nums.sort((a,b) => a - b);
   let combos = [];
 
