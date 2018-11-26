@@ -59,4 +59,4 @@ var letterCombinations = function (digits) {
   return combinations;
 };
 
-console.log(letterCombinations('23'));
+console.log(letterCombinations('23'));    // ['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']
