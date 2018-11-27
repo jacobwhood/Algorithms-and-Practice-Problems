@@ -1,8 +1,7 @@
 ﻿<Properties StartupConfiguration="{A1936415-E7BF-4D7A-A331-F4B12CF5B1C9}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="AlgosAndPracticeProblems/.gitignore">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AlgosAndPracticeProblems/Program.cs">
     <Files>
       <File FileName="AlgosAndPracticeProblems/Program.cs" Line="39" Column="1" />
-      <File FileName="AlgosAndPracticeProblems/.gitignore" Line="41" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.AlgosAndPracticeProblems PreferredExecutionTarget="MonoDevelop.Default" />
