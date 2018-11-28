@@ -27,34 +27,34 @@
 
 class MaxBinaryHeap {
   constructor() {
-    this.__values = [];
+    this.values = [];
   }
 
   /**
-   * Swap two elements of __values array at given indices
+   * Swap two elements of values array at given indices
    * @param {Number} index1 Index of first of element
    * @param {Number} index2 Index of second element
    */
-  __swap(index1, index2) {
-    let temp = this.__values[index1];
-    this.__values.splice(index1, 1, this.__values[index2]);
-    this.__values.splice(index2, 1, temp);
+  _swap(index1, index2) {
+    let temp = this.values[index1];
+    this.values.splice(index1, 1, this.values[index2]);
+    this.values.splice(index2, 1, temp);
   }
 
   /**
    * Bubble up most recently added value to rightful place in values array
    */
-  __bubbleUp() {
-    let index = this.__values.length - 1;
-    const element = this.__values[index];
+  _bubbleUp() {
+    let index = this.values.length - 1;
+    const element = this.values[index];
 
     while(index > 0) {
       let parentIndex = Math.floor((index - 1) / 2);
-      let parent = this.__values[parentIndex];
+      let parent = this.values[parentIndex];
 
       if (element <= parent) break;
 
-      this.__swap(index, parentIndex);
+      this._swap(index, parentIndex);
       index = parentIndex;
     }
   }
@@ -64,16 +64,73 @@ class MaxBinaryHeap {
    * @param {Number} value Value to insert into Max Binary Heap.
    * @returns {Object}
    * 
-   * Time complexity: O(n), due to call of this.__bubbleUp()
+   * Time complexity: O(log n), due to call of this._bubbleUp()
    */
   insert(value) {
-    this.__values.push(value);
-    this.__bubbleUp();
+    this.values.push(value);
+    this._bubbleUp();
     
     return this;
   }
 
-  
+  /**
+   * Perform sinking or percolating down effective to complete extractMax removal.
+   * Moves the new root node to its appropriate place in the values array.
+   */
+  _sinkDown() {
+    let index = 0;
+    const length = this.values.length;
+    const element = this.values[0];
+
+    while(true) {
+      let leftChildIndex = 2 * index + 1;
+      let rightChildIndex = 2 * index + 2;
+      let leftChild, rightChild;
+      let swap = null;
+      
+      if (leftChildIndex < length) {
+        leftChild = this.values[leftChildIndex];
+        
+        if (leftChild > element) {
+          swap = leftChildIndex;
+        }
+      }
+      if (rightChildIndex < length) {
+        rightChild = this.values[rightChildIndex];
+
+        if (  (swap === null && rightChild > element) || 
+              (swap !== null && rightChild > leftChild) ) {
+          swap = rightChildIndex;
+        }
+      }
+
+      if (swap === null) break;
+
+      this.values[index] = this.values[swap];
+      this.values[swap] = element;
+
+      index = swap;
+    }
+  }
+
+  /**
+   * Delete previous root of Max Binary Heap
+   * @returns {Object} Value at previous root
+   * 
+   * TIme complexity: O(log n), due to call of this._sinkDown()
+   */
+  extractMax() {
+    if (this.values.length === 0) return null;
+    const max = this.values[0];
+    const end = this.values.pop();
+
+    if (this.values.length > 0) {
+      this.values[0] = end;
+      this._sinkDown();
+    }
+
+    return max;
+  }
 }
 
 let heap = new MaxBinaryHeap();
@@ -84,4 +141,5 @@ heap.insert(50);
 heap.insert(10);
 heap.insert(100);
 heap.insert(101);
-console.log(heap.__values);
+console.log(heap.extractMax());
+console.log(heap.values);
