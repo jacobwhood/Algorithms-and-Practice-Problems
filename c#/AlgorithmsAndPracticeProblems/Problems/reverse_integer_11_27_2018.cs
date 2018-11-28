@@ -4,11 +4,20 @@ namespace AlgorithmsAndPracticeProblems
 {
     public static class ReverseIntegerClass
     {
-        public static int ReverseClass(int x)
+        /*
+        *   Reverse Integer
+        *    Given a 32-bit signed integer, reverse digits of an integer.
+        *
+        *   Complexity analysis:
+        *     - Time:  O(n), where n is number of digits in x
+        *     - Space: O(1), additional space allocation does not grow with size of input
+        */
+        public static int ReverseInteger(int x)
         {
-            int result = 0;
+            Int64 result = 0;
             bool isNegative = x < 0 ? true : false;
             int copy = x;
+            
             
             while (copy != 0)
             {
@@ -18,9 +27,9 @@ namespace AlgorithmsAndPracticeProblems
             }
 
             if (isNegative)
-                return result <= (Math.Pow(2, 31) * -1) ? 0 : result;
+                return result <= (Math.Pow(2, 31) * -1) ? 0 : (int)result;
             else
-                return result >= Math.Pow(2, 31) - 1 ? 0 : result;
+                return result >= Math.Pow(2, 31) - 1 ? 0 : (int)result;
         }
     }
 }
