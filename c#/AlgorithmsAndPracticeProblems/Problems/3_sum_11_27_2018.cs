@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 
-namespace AlgosAndPracticeProblems
+namespace AlgorithmsAndPracticeProblems
 {
     public static class ThreeSumClass
     {
@@ -40,4 +40,3 @@ namespace AlgosAndPracticeProblems
  
     }   
 }
-

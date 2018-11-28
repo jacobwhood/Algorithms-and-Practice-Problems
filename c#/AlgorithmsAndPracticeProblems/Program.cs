@@ -1,19 +1,13 @@
 ﻿using System;
 using System.Collections;
 
-namespace AlgosAndPracticeProblems
+namespace AlgorithmsAndPracticeProblems
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            int[] example1 = { -1, 0, 1, 2, -1, -4 };
-            int[] example2 = { -3, 0, 0, 2, 1, -4 };
-            ArrayList output1 = ThreeSumClass.ThreeSum(example1);      // [[-1, 0, 1], [-1, -1, 2]]
-            ArrayList output2 = ThreeSumClass.ThreeSum(example2);       // [[-3, 2, 1]]
-            PrintOutput(output1);
-            PrintOutput(output2);
-            
+            Console.WriteLine("Beginning execution");
         }
         
         static void PrintOutput(ArrayList arrayList)
