@@ -23,6 +23,11 @@
  *      - right child is stored at 2n + 2
  *   - For any child node at index n,
  *      - Its parent is at index Math.floor((n-1) / 2)
+ * 
+ * Time Complexity:
+ *   - Insertion: O(log n)
+ *   - Removal:   O(log n)
+ *   - Search:    O(n)
  */
 
 class MaxBinaryHeap {
@@ -69,8 +74,6 @@ class MaxBinaryHeap {
   insert(value) {
     this.values.push(value);
     this._bubbleUp();
-    
-    return this;
   }
 
   /**
@@ -120,7 +123,7 @@ class MaxBinaryHeap {
    * TIme complexity: O(log n), due to call of this._sinkDown()
    */
   extractMax() {
-    if (this.values.length === 0) return null;
+    if (this.values.length === 0) return;
     const max = this.values[0];
     const end = this.values.pop();
 
