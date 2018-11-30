@@ -18,7 +18,7 @@
  *   Space: O(n), where n is number of characters in the input string
  */
 
-const NUMERAL_VALUE = {
+const NUMERAL_VALUES = {
   I: 1,
   V: 5,
   X: 10,
@@ -35,13 +35,13 @@ const NUMERAL_VALUE = {
 const romanToInt = function (s) {
   return s.split('').reduce((accum, digit, i) => {
     if (accum === null) return accum;
-    else if (!NUMERAL_VALUE[digit]) {
+    else if (!NUMERAL_VALUES[digit]) {
       return null;
     } else {
-      if (NUMERAL_VALUE[s[i]] < NUMERAL_VALUE[s[i+1]]) {
-        accum -= NUMERAL_VALUE[digit];
+      if (NUMERAL_VALUES[s[i]] < NUMERAL_VALUES[s[i+1]]) {
+        accum -= NUMERAL_VALUES[digit];
       } else {
-        accum += NUMERAL_VALUE[digit];
+        accum += NUMERAL_VALUES[digit];
       }
 
       return accum;
