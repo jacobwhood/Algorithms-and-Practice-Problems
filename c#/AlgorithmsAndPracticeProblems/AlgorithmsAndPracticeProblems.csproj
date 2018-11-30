@@ -13,6 +13,9 @@
   <ItemGroup>
     <Folder Include="Tests\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Problems\roman_to_integer_11_30_2018.js" />
+  </ItemGroup>
   <PropertyGroup>
     <GenerateProgramFile>false</GenerateProgramFile>
   </PropertyGroup>
