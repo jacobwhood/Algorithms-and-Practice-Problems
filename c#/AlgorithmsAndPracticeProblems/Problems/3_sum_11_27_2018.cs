@@ -19,7 +19,7 @@ namespace AlgorithmsAndPracticeProblems
          *
          *   Complexity analysis:
          *     - Time:  O(n^2), where n is number of elements in nums
-         *     - Space: O(n!), all combos minus the non-unique triplets(?)
+         *     - Space: O(n!), all combos minus the non-unique triplets
         */
         public static ArrayList ThreeSum(int[] nums) {
             Array.Sort(nums);
