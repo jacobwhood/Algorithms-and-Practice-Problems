@@ -6,7 +6,8 @@
  * Max Binary Heap Rules:
  *   - Each parent has at most two child nodes 
  *   - Value of each parent node is always greater than its child nodes 
- *   - In MaxBinaryHeap, parent is greater than the children, but no guarantees between sibling nodes (no implied ordering between siblings)
+ *   - In MaxBinaryHeap, parent is greater than the children, but no guarantees between
+ *      sibling nodes (no implied ordering between siblings)
  *   - Binary heap is as compact as possible. All children of each node are as full as they can be and
  *      left children are filled out first
  * Min Binary Heap Rules:
