@@ -7,9 +7,12 @@
 function binarySearch(arr, target) {
   if (arr.length === 0) return -1;
   if (arr.length === 1) return arr[0] === target ? 0 : -1;
+
   let left = 0, right = arr.length;
+
   while (left < right) {
     let middle = Math.floor((right + left) / 2);
+
     if (arr[middle] === target) return middle;
     else if (arr[middle] > target) right = middle;
     else left = middle + 1;
