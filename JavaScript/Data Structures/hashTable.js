@@ -50,7 +50,7 @@ class HashTable {
 
   /**
    * Look up value stored in Hash Table for given key
-   * @param {String} key key to look up value in keyMap by
+   * @param {String} key key to look up value in Hash Table by
    */
   get(key) {
     let index = this._hash(key);
