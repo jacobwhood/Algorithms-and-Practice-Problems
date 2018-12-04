@@ -24,6 +24,10 @@
  * Input: '([)]'
  * Output false
  * 
+ * Complexity Analysis:
+ *   Time: O(n), where n is length of input string
+ *   Space: O(1), additional space does not grow with size of input
+ * 
 */
 
 /**
