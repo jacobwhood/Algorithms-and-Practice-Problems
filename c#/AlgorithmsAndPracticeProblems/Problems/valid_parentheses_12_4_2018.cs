@@ -30,6 +30,9 @@ namespace AlgorithmsAndPracticeProblems
          * Example 4:
          * Input: '([)]'
          * Output false
+         * Complexity Analysis:
+         *   Time: O(n), where n is length of input string
+         *   Space: O(1), additional space does not grow with size of input
          * 
         */
         public static bool isValid(string s)
@@ -88,6 +91,7 @@ namespace AlgorithmsAndPracticeProblems
             catch(InvalidOperationException e)
             {
                 // expected behavior
+                Console.WriteLine(e);
             }
             
             
